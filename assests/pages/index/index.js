@@ -1,4 +1,15 @@
-define(["vuex", "text!./template.html", "store/mutation-types"], function (Vuex, template, types) {
+define(
+    [
+        "vuex",
+        "text!./template.html",
+        "components/footer/index",
+        "store/mutation-types"
+    ], function (
+        Vuex,
+        template,
+        Footer,
+        types
+    ) {
    return {
        name: 'index',
        template: template,
@@ -19,6 +30,9 @@ define(["vuex", "text!./template.html", "store/mutation-types"], function (Vuex,
                console.log(user);
                this.$store.commit(types.USER_DEL, user);
            }
+       },
+       components: {
+           'v-footer': Footer
        }
    }
 });

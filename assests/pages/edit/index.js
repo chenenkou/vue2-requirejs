@@ -1,4 +1,15 @@
-define(["store/mutation-types", "text!./template.html", "lodash"], function (types, template, _) {
+define(
+    [
+        "text!./template.html",
+        "store/mutation-types",
+        "components/footer/index",
+        "lodash"
+    ], function (
+        template,
+        types,
+        Footer,
+        _
+    ) {
     return {
         name: 'edit',
         template: template,
@@ -48,6 +59,9 @@ define(["store/mutation-types", "text!./template.html", "lodash"], function (typ
                 this.$store.commit(types.USER_EDIT, this.user);
                 this.$router.push('/');
             }
+        },
+        components: {
+            'v-footer': Footer
         }
     }
 });

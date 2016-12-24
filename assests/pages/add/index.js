@@ -1,4 +1,13 @@
-define(["store/mutation-types", "text!./template.html"], function (types, template) {
+define(
+    [
+        "text!./template.html",
+        "store/mutation-types",
+        "components/footer/index"
+    ], function (
+        template,
+        types,
+        Footer
+    ) {
     return {
         name: 'add',
         template: template,
@@ -37,6 +46,9 @@ define(["store/mutation-types", "text!./template.html"], function (types, templa
                 this.$store.dispatch(types.USER_ADD, this.user);
                 this.$router.push('/');
             }
+        },
+        components: {
+            'v-footer': Footer
         }
     }
 });
