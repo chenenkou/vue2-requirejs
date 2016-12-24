@@ -1,0 +1,44 @@
+<div>
+    <div class="header">
+        <div class="am-g">
+            <h1>用户列表</h1>
+            <p>用户数：{{ count }}</p>
+        </div>
+        <hr>
+    </div>
+    <div class="am-g">
+        <div class="am-u-lg-6 am-u-md-8 am-u-sm-centered">
+            <div class="am-btn-group">
+                <router-link class="am-btn am-btn-success am-btn-sm" to="/add">新增</router-link>
+            </div>
+            <br>
+            <br>
+
+            <table class="am-table am-table-bordered am-table-radius am-table-striped">
+                <thead>
+                <tr>
+                    <th>姓名</th>
+                    <th>电话</th>
+                    <th>邮箱</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr v-for="vo in list">
+                    <td>{{ vo.username }}</td>
+                    <td>{{ vo.phone }}</td>
+                    <td>{{ vo.email }}</td>
+                    <td>
+                        <router-link class="am-btn am-btn-primary am-btn-xs" :to="{ name: 'edit', params: { id: vo.id }}">编辑</router-link>
+                        <button type="button" class="am-btn am-btn-danger am-btn-xs" @click="delUser(vo)">删除</button>
+                    </td>
+                </tr>
+                <tr v-if="!(list && list.length > 0)">
+                    <td colspan="4"><center>数据为空</center></td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>

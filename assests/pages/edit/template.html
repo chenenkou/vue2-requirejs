@@ -1,0 +1,45 @@
+<div>
+    <div class="header">
+        <div class="am-g">
+            <h1>编辑用户</h1>
+        </div>
+        <hr>
+    </div>
+    <div class="am-g">
+        <div class="am-u-lg-6 am-u-md-8 am-u-sm-centered">
+            <div class="am-btn-group">
+                <router-link class="am-btn am-btn-link" to="/">返回列表</router-link>
+            </div>
+            <br>
+            <br>
+
+            <div class="am-alert am-alert-danger" data-am-alert="" v-if="error">
+                <button type="button" class="am-close" @click="closeError">×</button>
+                <p>{{ error }}</p>
+            </div>
+
+            <form class="am-form" @submit="submitUser">
+                <fieldset>
+                    <div class="am-form-group">
+                        <label for="doc-ipt-username">姓名</label>
+                        <input type="text" class="" id="doc-ipt-username" placeholder="输入姓名" v-model="user.username">
+                    </div>
+
+                    <div class="am-form-group">
+                        <label for="doc-ipt-phone">电话</label>
+                        <input type="text" class="" id="doc-ipt-phone" placeholder="输入电话" v-model="user.phone">
+                    </div>
+
+                    <div class="am-form-group">
+                        <label for="doc-ipt-email">邮箱</label>
+                        <input type="text" class="" id="doc-ipt-email" placeholder="输入邮箱" v-model="user.email">
+                    </div>
+
+                    <p><button type="submit" class="am-btn am-btn-primary">提交</button></p>
+                    <pre>{{ user }}</pre>
+                </fieldset>
+            </form>
+
+        </div>
+    </div>
+</div>
