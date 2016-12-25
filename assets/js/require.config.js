@@ -1,5 +1,5 @@
 require.config({
-    baseUrl: "../assests/",
+    baseUrl: "../assets/",
     paths: {
         "css": "lib/css",
         "text": "lib/text",
