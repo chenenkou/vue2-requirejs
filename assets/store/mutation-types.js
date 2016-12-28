@@ -1,4 +1,4 @@
-define([], function () {
+define(function (require) {
     return {
         USER_ADD: 'USER_ADD',
         USER_EDIT: 'USER_EDIT',

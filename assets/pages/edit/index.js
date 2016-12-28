@@ -1,15 +1,9 @@
-define(
-    [
-        "text!./template.html",
-        "store/mutation-types",
-        "components/footer/index",
-        "lodash"
-    ], function (
-        template,
-        types,
-        Footer,
-        _
-    ) {
+define(function (require) {
+    var template = require("text!./template.html");
+    var Footer = require("components/footer/index");
+    var types = require("store/mutation-types");
+    var _ = require("lodash");
+
     return {
         name: 'edit',
         template: template,

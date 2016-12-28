@@ -1,13 +1,8 @@
-define(
-    [
-        "text!./template.html",
-        "store/mutation-types",
-        "components/footer/index"
-    ], function (
-        template,
-        types,
-        Footer
-    ) {
+define(function (require) {
+    var template = require("text!./template.html");
+    var Footer = require("components/footer/index");
+    var types = require("store/mutation-types");
+
     return {
         name: 'add',
         template: template,

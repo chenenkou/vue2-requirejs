@@ -1,4 +1,7 @@
-define(['store/mutation-types', 'lodash'], function (types, _) {
+define(function (require) {
+    var types = require("store/mutation-types");
+    var _ = require("lodash");
+
     // 该模块的初始状态
     var state = {
         users: [

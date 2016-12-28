@@ -1,22 +1,9 @@
-define(
-    [
-        "pages/index/index",
-        "pages/add/index",
-        "pages/edit/index",
-        "pages/404/index"
-    ],
-    function (
-        Index,
-        Add,
-        Edit,
-        Page404
-    ) {
-        return [
-            {path: '/', component: Index},
-            {path: '/index', component: Index},
-            {path: '/add', component: Add},
-            {path: '/edit/:id', component: Edit, name: 'edit'},
-            { path: '*', component: Page404}
-        ];
-    }
-);
+define(function (require) {
+    return [
+        {path: '/', component: require("pages/index/index")},
+        {path: '/index', component: require("pages/index/index")},
+        {path: '/add', component: require("pages/add/index")},
+        {path: '/edit/:id', component: require("pages/edit/index"), name: 'edit'},
+        {path: '*', component: require("pages/404/index")}
+    ];
+});
